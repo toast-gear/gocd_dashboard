@@ -1,0 +1,32 @@
+<div id="status-panel" class="row">
+    <div class="col-md-12">
+        <div class="panel panel-success">
+            <div class="panel-body panel-success">All systems are operational</div>
+        </div>
+    </div>
+</div>
+<div id="information-panel" class="row">
+    <div class="col-md-12">
+        <b>What is this site?</b>
+        <hr />
+        This is a status page to learn AngularJS and serverless architecture. The site continuously monitors a service which generates fake data to show in the metrics screen.
+        <br />
+        <br />
+    </div>
+</div>
+<div id="status-history-panel" class="row">
+    <div ng-repeat="value in streamData">
+        <div class="col-xs-12">
+            <b>{{ value.createdDateTime | date:'yyyy-dd-MM' }}</b>
+            <hr />
+            <div class="col-xs-3" style="padding-top:0px;padding-left:0px;padding-right:0px;padding-bottom:25px;">
+                {{ value.createdDateTime }}
+            </div>
+            <div class="col-xs-9" style="padding-top:0px;padding-left:0px;padding-right:0px;padding-bottom:25px;">
+                <div Class="ng-class:value.messageClass">
+                    {{ value.message }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
